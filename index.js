@@ -9,12 +9,11 @@ const render_canvas = document.body.querySelector("#render-canvas");
 const render_canvas_ctx = render_canvas.getContext("2d");
 
 const io = document.body.querySelector("#io");
-const b_debug_render = io.querySelector("#b_debug_render")
+const b_debug_render = io.querySelector("#b_debug_render");
+const debug_render_url = io.querySelector("#debug_render_url");
+let render_url = "";
 
 b_debug_render.addEventListener("click", render);
-
-let last_width = prerender_div.offsetWidth;
-let last_height = prerender_div.offsetHeight;
 
 function render() {
     // briefly show element for render
@@ -26,26 +25,28 @@ function render() {
     let c_height = prerender_div.offsetHeight;
     console.log(`${c_width} x ${c_height}`);
 
-    // update the canvas size
-    if (last_width !== c_width || last_height !== c_height) {
-        console.log("resizing canvas")
-        render_canvas.width = c_width;
-        render_canvas.height = c_height;
-        last_width = c_width;
-        last_height = c_height;
-    } else {
-        render_canvas_ctx.clearRect(0, 0, render_canvas.width, render_canvas.height);
-    }
+    // clear canvas and update size
+    render_canvas_ctx.clearRect(0, 0, render_canvas.width, render_canvas.height);
+    render_canvas.width = c_width;
+    render_canvas.height = c_height;
 
     html2canvas(prerender_div, {
+        backgroundColor: null,
         canvas: render_canvas,
         scale: 1
-    }).then(function (canvas) {
-        // reset the transform for further rendering
-        render_canvas_ctx.setTransform(1,0,0,1,0,0)
-
+    }).then(function() {
         // hide composite div when done
         // prerender_container.style.display = "none";
+        
+        // reset the transform when done since html2canvas forgets about this
+        render_canvas_ctx.setTransform(1,0,0,1,0,0)
+        
+        // prepare the render for download
+        const blob = render_canvas.toBlob((blob) => {
+            URL.revokeObjectURL(render_url);
+            render_url = URL.createObjectURL(blob);
+            debug_render_url.value = render_url;
+        });
     }); 
 }
 
