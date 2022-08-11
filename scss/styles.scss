@@ -11,12 +11,38 @@
     --theme-green-chosen: #58ff66;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     color:azure;
     background-color: rgb(55, 71, 79);
 }
 
-img {
-    border: 2px solid #00b65b;
+#img-sorter {
+    .selected {
+        border: 2px solid #00b65b;
+    }
+}
+
+#prerender-container {
+    display: none;
+    // position: absolute;
+}
+
+#prerender-div {
+    display: inline-block;
+    line-height: 0%;
+    img {
+    //    display: block; 
+    }
+}
+
+#render-canvas {
+
 }

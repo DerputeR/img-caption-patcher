@@ -7,24 +7,34 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel=stylesheet href="./css/styles.css" type="text/css">
         <title>Image-Caption Patcher</title>
-        <script defer type="module" src="./index.js"></script>
+        <script defer src="./node_modules/html2canvas/dist/html2canvas.js"></script>
+        <script defer src="./index.js"></script>
     </head>
 
 <body>
     <h1>Header 1</h1>
     
     <div id="img-sorter">
-        <img src="sampleimgs/de_vertigo0033.png" alt="A sample image" width="400" height="300">
+        <img class="selected" src="sampleimgs/de_vertigo0033.png" alt="A sample image" width="400" height="300">
 
         <div id="io">
-            <input class="material-symbols-outlined" id="btnImport" type="button" value="add" alt="import" title="Import PNG(s)">
-            <input class="material-symbols-outlined" id="btnExport" type="button" value="file_download" title="Export to PNG">
+            <input class="material-symbols-outlined" id="b_import" type="button" value="add" alt="import" title="Import PNG(s)">
+            <input class="material-symbols-outlined" id="b_export" type="button" value="file_download" title="Export to PNG">
             <!-- <a> will be used to hold a generated download for the image -->
             <a id="download_export" style="display:none"></a>
             <!-- this will hold any image(s) uploaded -->
             <input type="file" id="upload_import" accept="image/*" style="display:none">
+            <input type="button" id="b_debug_render" value="debug render">
         </div> 
     </div>
+
+    <div id="prerender-container">
+        <div id="prerender-div">
+            <img src="sampleimgs/de_vertigo0033.png" alt="A sample image" width="1024" height="768">
+        </div>
+    </div>
+
+    <canvas id="render-canvas" width="1024" height="768"></canvas>
 
     
 </body>
