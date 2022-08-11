@@ -1,0 +1,32 @@
+{
+  "name": "img-caption-patcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css:scss": "sass --style=compressed scss:css",
+    "css:autoprefixer": "postcss -u autoprefixer -r css/*.css",
+    "build:css": "npm run css:scss && npm run css:autoprefixer",
+    "watch:css": "onchange \"scss\" -- npm run build:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DerputeR/img-caption-patcher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DerputeR/img-caption-patcher/issues"
+  },
+  "homepage": "https://github.com/DerputeR/img-caption-patcher#readme",
+  "dependencies": {
+    "html2canvas": "^1.4.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^10.0.0",
+    "sass": "^1.54.4"
+  }
+}

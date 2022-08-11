@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel=stylesheet href="./html.css" type="text/css">
-    <title>Image-Caption Patcher</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel=stylesheet href="./css/styles.css" type="text/css">
+        <title>Image-Caption Patcher</title>
+        <script defer type="module" src="./index.js"></script>
+    </head>
 
 <body>
     <h1>Header 1</h1>
     
-    <rect>
-        Hi
-    </rect>
+    <div id="img-sorter">
+        <img src="sampleimgs/de_vertigo0033.png" alt="A sample image" width="400" height="300">
+
+        <div id="io">
+            <input class="material-symbols-outlined" id="btnImport" type="button" value="add" alt="import" title="Import PNG(s)">
+            <input class="material-symbols-outlined" id="btnExport" type="button" value="file_download" title="Export to PNG">
+            <!-- <a> will be used to hold a generated download for the image -->
+            <a id="download_export" style="display:none"></a>
+            <!-- this will hold any image(s) uploaded -->
+            <input type="file" id="upload_import" accept="image/*" style="display:none">
+        </div> 
+    </div>
 
     
-    <!--Generally, it is best practice to place the script at the end of the body so the page is fully loaded and rendered before it loads and parses the JS-->
-    <script src="./index.js"></script>
 </body>
 
 </html>
