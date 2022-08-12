@@ -8,14 +8,28 @@
         <link rel=stylesheet href="./css/styles.css" type="text/css">
         <title>Image-Caption Patcher</title>
         <script defer src="./node_modules/html2canvas/dist/html2canvas.js"></script>
-        <script defer src="./index.js"></script>
+        <script defer src="./js/index.js"></script>
     </head>
 
 <body>
     <h1>Header 1</h1>
+    <a href="./test-pages/dom-to-image-more.html">Dom to Image Tests</a>
+    <a href="./test-pages/cropper.html">Cropper Tests</a>
     
     <div id="img-sorter">
-        <img class="selected" src="sampleimgs/de_vertigo0033.png" alt="A sample image" width="400" height="300">
+        <div id="preview-div">
+            <div class="frame">
+                <img class="" src="sampleimgs/de_vertigo0033.png" alt="A sample image" width="400" height="300">
+                <div class="text">
+                    Top text
+                </div>
+                <div class="text">
+                    Bottom text
+                </div>
+            </div>
+        </div>
+
+
 
         <div id="io">
             <input class="material-symbols-outlined" id="b_import" type="button" value="add" alt="import" title="Import PNG(s)">
@@ -31,8 +45,15 @@
 
     <div id="prerender-container">
         <div id="prerender-div">
-            heee
-            <img src="sampleimgs/de_vertigo0033.png" alt="A sample image" width="1024" height="768">
+            <div class="frame">
+                <img src="sampleimgs/de_vertigo0033.png" alt="A sample image" width="1024" height="768">
+                <div class="text">
+                    Top text
+                </div>
+                <div class="text">
+                    Bottom text
+                </div>
+            </div>
         </div>
     </div>
 

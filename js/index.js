@@ -1,7 +1,7 @@
 "use strict";
 
-// import './node_modules/html2canvas/dist/html2canvas.min.js';
-// import './node_modules/html2canvas/dist/html2canvas.js';
+// import '../node_modules/html2canvas/dist/html2canvas.min.js';
+// import '../node_modules/html2canvas/dist/html2canvas.js';
 
 const prerender_container = document.body.querySelector("#prerender-container");
 const prerender_div = prerender_container.querySelector("#prerender-div");

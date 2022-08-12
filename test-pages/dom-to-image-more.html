@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
+    <meta name="author" content="author">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel=stylesheet href="../css/dom-to-image-more.css" type="text/css">
+    <script defer src="../node_modules/dom-to-image-more/src/dom-to-image-more.js"></script>
+    <script defer src="../js/dom-to-image-more.js"></script>
+    <!-- <script defer type="module" src="../js/dom-to-image-more.js"></script> -->
+    <title>Dom-to-Image-More Tests</title>
+</head>
+
+<body>
+    <a href="../index.html">Index</a>
+    <a href="./cropper.html">Cropper Tests</a>
+
+    <div id="prerender-container">
+        <div id="prerender-div">
+            <div class="frame">
+                <img src="../sampleimgs/de_vertigo0033.png" alt="A sample image" width="1024" height="768">
+                <div class="text">
+                    Top text
+                </div>
+                <div class="text">
+                    Bottom text
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="io">
+        <input class="material-symbols-outlined" id="b_export" type="button" value="file_download" title="Export to PNG">
+        <input class="debug" type="button" id="b_render" value="render">
+        <input class="debug" type="text" id="render_url" value="">
+    </div> 
+
+    <canvas id="render-canvas" width="1024" height="768"></canvas>
+
+
+</body>
+
+</html>

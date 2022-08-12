@@ -11,6 +11,14 @@
     --theme-green-chosen: #58ff66;
 }
 
+a {
+    color: #E8EAF6;
+}
+
+a:visited {
+    color: #9FA8DA;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -31,28 +39,13 @@ body {
 }
 
 #prerender-container {
-    display: none;
+    // display: none;
     // position: absolute;
-}
-
-#preview-div {
-    display: inline-block;
-    line-height: 0%;
-    img {
-    //    display: block; 
-    }
 }
 
 #prerender-div {
     display: inline-block;
     line-height: 0%;
-    img {
-    //    display: block; 
-    }
-}
-
-#render-canvas {
-
 }
 
 .frame {
@@ -63,11 +56,5 @@ body {
         top: 50%;
         width: 100%;
         text-align: center;
-    }
-}
-
-#preview-div {
-    .frame {
-        font-size: 1em;
     }
 }
