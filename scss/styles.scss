@@ -29,9 +29,16 @@ a#download_export {
     }
 }
 
+#prerender-container {
+    display: block;
+}
+
 #prerender-div {
     white-space: nowrap;
     display:inline-block;
+    .row {
+        display: block;
+    }
 }
 
 .frame {
@@ -64,7 +71,7 @@ a#download_export {
         margin-left: 1ch;
         margin-right: 1ch;
         text-align: center;
-        white-space: pre-line;
+        white-space: pre-wrap;
         padding-left: 1ch;
         padding-right: 1ch;
     }

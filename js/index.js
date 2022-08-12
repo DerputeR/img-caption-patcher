@@ -19,10 +19,12 @@ const b_export = io.querySelector("#b_export");
 
 const preview_height = 300;
 
-function render() {
+function render(renderable_node=prerender_div) {
     return new Promise((resolve, reject) => {
-        // briefly show element for render
-        prerender_container.style.display = "block";
+        if (renderable_node === prerender_div) {
+            // briefly show element for render
+            prerender_container.style.display = "block";
+        }
         // prerender_container.style.opacity = "0";
 
         // set appropriate dimensions
