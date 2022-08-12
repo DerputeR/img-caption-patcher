@@ -26,8 +26,10 @@ function render() {
         // prerender_container.style.opacity = "0";
 
         // set appropriate dimensions
-        let c_width = prerender_div.offsetWidth;
-        let c_height = prerender_div.offsetHeight;
+        // let c_width = prerender_div.offsetWidth;
+        // let c_height = prerender_div.offsetHeight;
+        let c_width =  prerender_div.scrollWidth;
+        let c_height = prerender_div.scrollHeight;
         console.log(`${c_width} x ${c_height}`);
 
         // clear canvas and update size

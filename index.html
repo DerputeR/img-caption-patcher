@@ -16,20 +16,6 @@
     <a href="./test-pages/cropper.html">Cropper Tests</a>
     
     <div id="img-sorter">
-        <div id="preview-div">
-            <div class="frame">
-                <img class="" src="sampleimgs/de_vertigo0033.png" alt="A sample image" width="400" height="300">
-                <div class="text">
-                    Top text
-                </div>
-                <div class="text">
-                    Bottom text
-                </div>
-            </div>
-        </div>
-
-
-
         <div id="io">
             <input class="material-symbols-outlined" id="b_import" type="button" value="add" alt="import" title="Import PNG(s)">
             <input class="material-symbols-outlined" id="b_export" type="button" value="file_download" title="Export to PNG">
@@ -45,12 +31,15 @@
     <div id="prerender-container">
         <div id="prerender-div">
             <div class="frame">
+                <div class="flextext">
+                    <span contenteditable="true" class="text top" style="">Top      text</span>
+                </div>
+                <div class="flextext">
+                    <span contenteditable="true" class="text bottom" style="">Bottom text aaeeeeeeaaae eeeeeeeeeeeaaeeeeeeaaae eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+                        aefa
+                        aefafeeee</span>
+                </div>
                 <img src="sampleimgs/de_vertigo0033.png" alt="A sample image" width="1024" height="768">
-                <svg width="1024" height="768">
-                    <text x="50%" y="30%">Top 
-                        text</text>
-                    <text x="50%" y="70%">Bottom text</text>
-                </svg>  
             </div>
         </div>
     </div>

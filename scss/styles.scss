@@ -3,12 +3,7 @@
 
 /* Custom variables */
 :root{
-    --pill: 2em;
     --rounded: 0.5em;
-    --theme-green: #00b65b;
-    --theme-green-disabled: #a9dac1;
-    --theme-green-hover: #00cf2d;
-    --theme-green-chosen: #58ff66;
 }
 
 * {
@@ -20,7 +15,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    color:azure;
+    color:white;
     background-color: rgb(55, 71, 79);
 }
 
@@ -34,58 +29,46 @@ a#download_export {
     }
 }
 
-#prerender-container {
-    display: none;
-    // position: absolute;
-}
-
-#preview-div {
-    display: inline-block;
-    line-height: 0%;
-    img {
-    //    display: block; 
-    }
-}
-
 #prerender-div {
-    display: inline-block;
-    line-height: 0%;
-    img {
-    //    display: block; 
-    }
-}
-
-#render-canvas {
-    // image-rendering:auto;
+    white-space: nowrap;
+    display:inline-block;
 }
 
 .frame {
+    display: inline-block;
     position: relative;
     font-size: 48pt;
-    svg {
+    text-overflow: clip;
+    overflow: clip;
+    img {
+        vertical-align: bottom;
+    }
+    .flextext {
+        display: flex;
         position: absolute;
-        top: 0;
-        left: 0;
-        text {
-            font-weight: bold;
-            fill:red;
-            position: absolute;
-            text-align: center;
-            text-anchor: middle;
-            dominant-baseline: central;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        .text.bottom {
+            margin-bottom: 1em;
+            align-self: flex-end;
+        }
+        .text.top {
+            margin-top: 1em;
+            align-self: flex-start;
         }
     }
     .text {
+        z-index: 1;
         color: white;
-        position: absolute;
-        top: 50%;
-        width: 100%;
+        margin-left: 1ch;
+        margin-right: 1ch;
         text-align: center;
+        white-space: pre-line;
+        padding-left: 1ch;
+        padding-right: 1ch;
     }
-}
-
-#preview-div {
-    .frame {
-        font-size: 1em;
+    .text:hover {
+        outline: 2px solid #00b65b;
     }
 }
