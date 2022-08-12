@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/DerputeR/img-caption-patcher#readme",
   "dependencies": {
-    "dom-to-image-more": "^2.11.1",
     "html2canvas": "^1.4.1"
   },
   "devDependencies": {

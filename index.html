@@ -13,7 +13,6 @@
 
 <body>
     <h1>Header 1</h1>
-    <a href="./test-pages/dom-to-image-more.html">Dom to Image Tests</a>
     <a href="./test-pages/cropper.html">Cropper Tests</a>
     
     <div id="img-sorter">
@@ -35,7 +34,7 @@
             <input class="material-symbols-outlined" id="b_import" type="button" value="add" alt="import" title="Import PNG(s)">
             <input class="material-symbols-outlined" id="b_export" type="button" value="file_download" title="Export to PNG">
             <!-- <a> will be used to hold a generated download for the image -->
-            <a id="download_export" style="display:none"></a>
+            <a id="download_export"></a>
             <!-- this will hold any image(s) uploaded -->
             <input type="file" id="upload_import" accept="image/*" style="display:none">
             <input class="debug" type="button" id="b_debug_render" value="debug render">
@@ -47,12 +46,11 @@
         <div id="prerender-div">
             <div class="frame">
                 <img src="sampleimgs/de_vertigo0033.png" alt="A sample image" width="1024" height="768">
-                <div class="text">
-                    Top text
-                </div>
-                <div class="text">
-                    Bottom text
-                </div>
+                <svg width="1024" height="768">
+                    <text x="50%" y="30%">Top 
+                        text</text>
+                    <text x="50%" y="70%">Bottom text</text>
+                </svg>  
             </div>
         </div>
     </div>

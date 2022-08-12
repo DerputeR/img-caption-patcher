@@ -24,6 +24,10 @@ body {
     background-color: rgb(55, 71, 79);
 }
 
+a#download_export {
+    display: none;
+}
+
 #img-sorter {
     .selected {
         border: 2px solid #00b65b;
@@ -52,13 +56,27 @@ body {
 }
 
 #render-canvas {
-
+    // image-rendering:auto;
 }
 
 .frame {
     position: relative;
     font-size: 48pt;
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text {
+            font-weight: bold;
+            fill:red;
+            position: absolute;
+            text-align: center;
+            text-anchor: middle;
+            dominant-baseline: central;
+        }
+    }
     .text {
+        color: white;
         position: absolute;
         top: 50%;
         width: 100%;
