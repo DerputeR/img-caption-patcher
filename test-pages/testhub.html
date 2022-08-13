@@ -31,16 +31,44 @@
         </div> 
     </div>
 
-    <h2>Pre-render copy</h2>
-    <div id="prerender-container">
-        <div id="prerender-div">
-            <div class="row">
+    <h2>Editor</h2>
+    <div id="editor">
+        <div id="zoom">
+            <input id="zoom-slider" type="range" min="10" max="200" value="100" step="10">
+            <datalist id="zoom-presets">
+                <option value="10"></option>
+                <option value="50"></option>
+                <option value="100"></option>
+                <option value="150"></option>
+                <option value="200"></option>
+            </datalist>
+            <span id="zoom-span"><input list="zoom-presets" id="zoom-num" type="number" min="2" max="2000" value="100"></span>
+        </div>
+        <div id="editor-image">
+            <div id="frame-wrap">
                 <div class="frame">
                     <div class="flextext">
                         <span contenteditable="true" class="text top" style="">Top text</span>
                     </div>
                     <div class="flextext">
                         <span contenteditable="true" class="text bottom" style="">Bottom text</span>
+                    </div>
+                    <img src="../sampleimgs/de_vertigo0033.png" alt="A sample image" width="1024" height="768">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Pre-render copy</h2>
+    <div id="prerender-container">
+        <div id="prerender-div">
+            <div class="row">
+                <div class="frame">
+                    <div class="flextext">
+                        <span class="text top" style="">Top text</span>
+                    </div>
+                    <div class="flextext">
+                        <span class="text bottom" style="">Bottom text</span>
                     </div>
                     <img src="../sampleimgs/de_vertigo0033.png" alt="A sample image" width="1024" height="768">
                 </div>

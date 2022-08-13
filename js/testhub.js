@@ -3,6 +3,18 @@
 // import '../node_modules/html2canvas/dist/html2canvas.min.js';
 // import '../node_modules/html2canvas/dist/html2canvas.js';
 
+/// Editor
+const editor = document.body.querySelector("#editor");
+const editor_image = editor.querySelector("#editor-image");
+const editor_frame_wrap = editor_image.querySelector("#frame-wrap");
+const editor_frame = editor_image.querySelector(".frame");
+
+const zoom = editor.querySelector("#zoom");
+const zoom_slider = zoom.querySelector("#zoom-slider");
+const zoom_number = zoom.querySelector("#zoom-num");
+let zoom_percentage = 100;
+
+/// Render preview
 const prerender_container = document.body.querySelector("#prerender-container");
 const prerender_div = prerender_container.querySelector("#prerender-div");
 const render_canvas = document.body.querySelector("#render-canvas");
@@ -85,3 +97,69 @@ b_export.addEventListener("click", (event) => {
         exportRender(render_url, file_name, export_anchor);
     }
 });
+
+
+
+
+// 0 = slider moved, 1 = number changed, 2 = scroll-wheeled
+// positive scroll_count for scroll up, negative for scroll down
+function updateZoom(mode = 0, scroll_count = 0) {
+    mode = mode % 3;
+    switch (mode) {
+        case 0:
+            console.log("zoom slider updated");
+            zoom_percentage = zoom_slider.value;
+            zoom_number.value = zoom_percentage;
+            break;
+        case 1:
+            console.log("zoom number field updated");
+            zoom_percentage = zoom_number.value;
+            zoom_slider.value = zoom_percentage;
+            break;
+        case 2:
+            console.log("zoomed via scrollwheel");
+            zoom_percentage += scroll_count;
+            zoom_slider.number = zoom_percentage;
+            zoom_slider.value = zoom_percentage;
+            break;
+        default:
+            zoom_percentage = 100;
+            break;
+    
+    }
+
+    console.log(`Pre-zoom scroll pos: (${editor_image.scrollLeft}, ${editor_image.scrollTop})`);
+
+    
+    editor_frame.style.transform = `scale(${zoom_percentage}%)`;
+    editor_frame_wrap.style.width = `${editor_frame.scrollWidth * (zoom_percentage / 100)}px`;
+    editor_frame_wrap.style.height = `${editor_frame.scrollHeight * (zoom_percentage / 100)}px`;
+    
+    let lastLeft = editor_image.scrollLeft;
+    let lastTop = editor_image.scrollTop;
+
+    console.log(`Post-zoom scroll pos: (${editor_image.scrollLeft}, ${editor_image.scrollTop})`);
+
+    let barWidth = editor_image.scrollWidth - editor_image.clientWidth;
+    let barHeight = editor_image.scrollHeight - editor_image.clientHeight;
+
+    if (editor_image.scrollWidth > editor_image.clientWidth) {
+        let neededLeft = ((editor_image.scrollWidth - editor_image.clientWidth) / 2);
+        editor_image.scrollLeft = neededLeft;
+    }
+    if (editor_image.scrollHeight > editor_image.clientHeight) {
+        let neededTop = ((editor_image.scrollHeight - editor_image.clientHeight) / 2);
+        editor_image.scrollTop = neededTop;
+    }
+
+    console.log(`Centered scroll pos: (${editor_image.scrollLeft}, ${editor_image.scrollTop})`);
+}
+zoom_slider.addEventListener("input", (event) => {
+    updateZoom(0);
+});
+zoom_number.addEventListener("change", (event) => {
+    updateZoom(1);
+});
+
+// page load stuff
+updateZoom(0);
