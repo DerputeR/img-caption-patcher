@@ -1,9 +1,13 @@
-@use 'styles';
+@use 'testhub';
 
 #crop-preview {
     overflow: clip;
-    width: 1024px;
-    height: 768px;
+    // width: 1024px;
+    // height: 768px;
+
+    max-width: 1024px;
+    max-height: 768px;
+
 
     // min-width: 1024px;
     // min-height: 768px;

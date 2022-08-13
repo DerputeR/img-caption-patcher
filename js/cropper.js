@@ -16,19 +16,27 @@ let cropper = new Cropper(src_img, {
 });
 
 src_img.addEventListener("crop", () => {
-
-    
-    console.log("crop done");
+    const crop_box_data = cropper.getCropBoxData();
     const new_canvas = cropper.getCroppedCanvas({
         //minWidth: output_canvas.width,
         //minHeight: output_canvas.height
         // maxWidth: output_canvas.width,
         // maxHeight: output_canvas.height
+        width: crop_box_data.width,
+        height: crop_box_data.height
     });
-    crop_preview.style.width = new_canvas.width;
-    crop_preview.style.height = new_canvas.height;
+    // crop_preview.style.width = new_canvas.width;
+    // crop_preview.style.height = new_canvas.height;
     output_canvas.width = new_canvas.width;
     output_canvas.height = new_canvas.height;
     output_canvas_ctx.drawImage(new_canvas, 0, 0);
+});
+
+src_img.addEventListener("cropend", () => {
+    // console.log(cropper.getData());
+    // console.log(cropper.getImageData());
+    // console.log(cropper.getCanvasData());
+    console.log(cropper.getCropBoxData());
+    console.log("crop done");
 })
 
