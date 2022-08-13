@@ -8,7 +8,9 @@
     <meta name="keywords" content="keywords">
     <meta name="author" content="author">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel=stylesheet href="../node_modules/cropperjs/dist/cropper.css" type="text/css">
     <link rel=stylesheet href="../css/cropper.css" type="text/css">
+    <script defer src="../node_modules/cropperjs/dist/cropper.js"></script>
     <script defer src="../js/cropper.js"></script>
     <title>Cropper Tests</title>
 </head>
@@ -18,21 +20,28 @@
     <div id="prerender-container">
         <div id="prerender-div">
             <div class="row">
-                <div class="frame">
+                <div id="currently" class="frame">
                     <div class="flextext">
                         <span contenteditable="true" class="text top" style="">Top text</span>
                     </div>
                     <div class="flextext">
                         <span contenteditable="true" class="text bottom" style="">Bottom text</span>
                     </div>
-                    <img src="../sampleimgs/de_vertigo0033.png" alt="A sample image" width="1024" height="768">
+                    <img id="currentImg" src="../sampleimgs/de_vertigo0033.png" alt="A sample image" width="1024" height="768">
                 </div>
             </div>
         </div>
     </div>
 
-    <h2>Render result</h2>
+    <h2>Image preview</h2>
+    <div id="crop-preview"></div>
+
+    <h2>Canvas preview</h2>
     <canvas id="render-canvas" width="1024" height="768"></canvas>
+
+    <div id="index-wrap">
+        <iframe id="index" src="../index.html" frameborder="0"></iframe>
+    </div>
 </body>
 
 </html>

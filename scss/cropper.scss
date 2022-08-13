@@ -1,2 +1,29 @@
 @use 'styles';
 
+#crop-preview {
+    overflow: clip;
+    width: 1024px;
+    height: 768px;
+
+    // min-width: 1024px;
+    // min-height: 768px;
+}
+
+
+
+
+div#index-wrap {
+    $small-w: 600;
+    $small-h: 300;
+    $scalefactor: 0.5;
+
+    width: #{$small-w + "px"};
+    height: #{$small-h + "px"};
+    iframe#index {
+        width: #{($small-w / $scalefactor) + "px"};
+        height: #{($small-h / $scalefactor) + "px"};
+        transform-origin: top left;
+        transform: scale($scalefactor);
+    }
+}
+

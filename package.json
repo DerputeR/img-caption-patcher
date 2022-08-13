@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/DerputeR/img-caption-patcher#readme",
   "dependencies": {
+    "cropperjs": "^1.5.12",
     "html2canvas": "^1.4.1"
   },
   "devDependencies": {
