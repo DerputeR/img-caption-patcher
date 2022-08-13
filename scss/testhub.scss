@@ -68,12 +68,10 @@ a#download_export {
     .text {
         z-index: 1;
         color: white;
-        margin-left: 1ch;
-        margin-right: 1ch;
         text-align: center;
         white-space: pre-wrap;
-        padding-left: 1ch;
-        padding-right: 1ch;
+        padding-left: .5ch;
+        padding-right: .5ch;
     }
     .text:hover {
         outline: 2px solid #00b65b;
